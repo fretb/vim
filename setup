@@ -1,19 +1,10 @@
 #!/usr/bin/env bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-if [ -f $DIR/.notfirstrun ]; then
-  cd $DIR
-  git pull
-  git submodule foreach git checkout master
-  git submodule foreach git pull
-else
-  cd $DIR
-  git pull
-  git submodule update --init
-  git submodule foreach git checkout master
-  git submodule foreach git pull
-  touch $DIR/.notfirstrun
-fi
+[ -f $DIR/.notfirstrun ] || cd $DIR && git submodule --init && touch $DIR/.notfirstrun
+git pull
+git submodule foreach git checkout master
+git submodule foreach git pull
 
 ln -fs $DIR $HOME/.vim
 ln -fs $DIR/vimrc $HOME/.vimrc
