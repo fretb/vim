@@ -1,17 +1,19 @@
 #!/usr/bin/env bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-#if [ -f $DIR/.notfirstrun ]; then
+if [ -f $DIR/.notfirstrun ]; then
   cd $DIR
   git pull
-  git submodule foreach git pull origin master
-#else
-#  cd $DIR
-#  git pull
-#  git submodule update --init -- dotfiles scripts
-#  git submodule update --remote -- dotfiles scripts
-#  touch $DIR/.notfirstrun
-#fi
+  git submodule foreach git checkout master
+  git submodule foreach git pull
+else
+  cd $DIR
+  git pull
+  git submodule update --init
+  git submodule foreach git checkout master
+  git submodule foreach git pull
+  touch $DIR/.notfirstrun
+fi
 
 ln -fs $DIR $HOME/.vim
 ln -fs $DIR/vimrc $HOME/.vimrc
