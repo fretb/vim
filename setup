@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-[ -f $DIR/.notfirstrun ] || cd $DIR && git submodule --init && touch $DIR/.notfirstrun
+[ -f $DIR/.notfirstrun ] || cd $DIR && git submodule update --init && touch $DIR/.notfirstrun
+cd $DIR
 git pull
 git submodule foreach git checkout master
 git submodule foreach git pull
 
-ln -fs $DIR $HOME/.vim
-ln -fs $DIR/vimrc $HOME/.vimrc
+#ln -fs $DIR $HOME/.vim
+#ln -fs $DIR/vimrc $HOME/.vimrc
 
