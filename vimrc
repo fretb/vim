@@ -12,7 +12,7 @@ set autoindent
 set history=1000
 set mouse=a
 set mousehide
-set nocompatible
+"set nocompatible
 set number " line numbers
 set sw=2 sts=2 et " tab 2 spaces
 set viewoptions=folds,options,cursor,unix,slash
@@ -35,7 +35,7 @@ nmap <leader>nt :NERDTreeFind<CR>
 let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
 let NERDTreeChDirMode=0
-let NERDTreeQuitOnOpen=1
+let NERDTreeQuitOnOpen=0
 let NERDTreeMouseMode=2
 let NERDTreeShowHidden=1
 let NERDTreeKeepTreeInNewTab=1
