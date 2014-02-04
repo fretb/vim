@@ -28,3 +28,6 @@
 [submodule "bundle/numbers.vim"]
 	path = bundle/numbers.vim
 	url = https://github.com/myusuf3/numbers.vim.git
+[submodule "bundle/vim-trailing-whitespace"]
+	path = bundle/vim-trailing-whitespace
+	url = https://github.com/bronson/vim-trailing-whitespace.git
