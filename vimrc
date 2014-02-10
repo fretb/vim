@@ -3,32 +3,30 @@
 " 2014-01-21 
 " @fretb
 
-" Basics {
+" Pathogen
+execute pathogen#infect()
+
+
+" Basics
+set nocompatible
+filetype plugin indent on
+filetype plugin on
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0]) " git commit always first line
 colorscheme molokai
-filetype plugin indent on
 scriptencoding utf-8
 set autoindent
 set history=1000
 set mouse=a
 set mousehide
-"set nocompatible
-set number " line numbers
 set sw=2 sts=2 et " tab 2 spaces
-set viewoptions=folds,options,cursor,unix,slash
+"set viewoptions=folds,options,cursor,unix,slash
 set virtualedit=onemore
 syn on 
-" }
 
-" Pathogen {
-execute pathogen#infect()
-" }
-
-" Leader {
+" Leader
 let mapleader = ','
-" }
 
-" NerdTree {
+" NerdTree
 map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 map <leader>e :NERDTreeFind<CR>
 nmap <leader>nt :NERDTreeFind<CR>
@@ -39,9 +37,8 @@ let NERDTreeQuitOnOpen=0
 let NERDTreeMouseMode=2
 let NERDTreeShowHidden=1
 let NERDTreeKeepTreeInNewTab=1
-" }
 
-" Vim UI {
+" Vim UI
 if has('cmdline_info')
   set ruler                   " Show the ruler
   set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
@@ -69,6 +66,8 @@ map <C-H> <C-W>h<C-W>_
 
 noremap j gj
 noremap k gk
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
 
 set backspace=indent,eol,start  " Backspace for dummies
 set cursorline
@@ -90,9 +89,7 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic white
 set splitright
 set splitbelow
 
-" }
-
-" Code Folding {
+" Code Folding
 nmap <leader>f0 :set foldlevel=0<CR>
 nmap <leader>f1 :set foldlevel=1<CR>
 nmap <leader>f2 :set foldlevel=2<CR>
@@ -103,4 +100,3 @@ nmap <leader>f6 :set foldlevel=6<CR>
 nmap <leader>f7 :set foldlevel=7<CR>
 nmap <leader>f8 :set foldlevel=8<CR>
 nmap <leader>f9 :set foldlevel=9<CR>
-" }
