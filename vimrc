@@ -1,18 +1,25 @@
 " .vimrc
 "
-" 2014-01-21 
+" 2014-01-21
 " @fretb
 
 " Pathogen
 execute pathogen#infect()
 
+" Colorscheme
+if ($OUTSIDE)
+  set background=light
+  colorscheme solarized
+else
+  set background=dark
+  colorscheme molokai
+end
 
 " Basics
 set nocompatible
 filetype plugin indent on
 filetype plugin on
 au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0]) " git commit always first line
-colorscheme molokai
 scriptencoding utf-8
 set autoindent
 set history=1000
@@ -21,7 +28,7 @@ set mousehide
 set sw=2 sts=2 et " tab 2 spaces
 "set viewoptions=folds,options,cursor,unix,slash
 set virtualedit=onemore
-syn on 
+syn on
 
 " Leader
 let mapleader = ','
