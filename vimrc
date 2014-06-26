@@ -6,15 +6,6 @@
 " Pathogen
 execute pathogen#infect()
 
-" Colorscheme
-if ($OUTSIDE)
-  set background=light
-  colorscheme solarized
-else
-  set background=dark
-  colorscheme molokai
-end
-
 " Basics
 set nocompatible
 filetype plugin indent on
@@ -29,6 +20,15 @@ set sw=2 sts=2 et " tab 2 spaces
 "set viewoptions=folds,options,cursor,unix,slash
 set virtualedit=onemore
 syn on
+
+" Colorscheme
+if !empty($OUTSIDE)
+  set background=light
+  colorscheme solarized
+else
+  set background=dark
+  colorscheme molokai
+end
 
 " Leader
 let mapleader = ','
