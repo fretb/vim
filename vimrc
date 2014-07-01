@@ -22,6 +22,9 @@ set virtualedit=onemore
 syn on
 
 " Colorscheme
+if $TERM == "xterm-256color"
+   set t_Co=256
+end
 if !empty($OUTSIDE)
   set background=light
   colorscheme solarized
