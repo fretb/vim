@@ -1,112 +1,52 @@
-" .vimrc
-"
-" 2014-01-21
-" @fretb
+call pathogen#infect()
 
-" Pathogen
-execute pathogen#infect()
+if $TERM == "xterm-256color"
+  set t_Co=256
+end
 
-" Basics
+set autoindent
+set backspace=indent,eol,start
+set background=dark
+set expandtab
+set hlsearch
+set incsearch
+set ignorecase
+set laststatus=2
+set modifiable
 set nocompatible
+set pastetoggle=<F3>
+set shiftwidth=2
+set smartindent
+set tabstop=2
+set virtualedit=onemore
+
+color molokai
+filetype indent on
 filetype plugin indent on
 filetype plugin on
-au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0]) " git commit always first line
-scriptencoding utf-8
-set autoindent
-set history=1000
-set mouse=a
-set mousehide
-set sw=2 sts=2 et " tab 2 spaces
-"set viewoptions=folds,options,cursor,unix,slash
-set virtualedit=onemore
-syn on
+highlight clear SignColumn
+syntax on
 
-" Colorscheme
-if $TERM == "xterm-256color"
-   set t_Co=256
-end
-if !empty($OUTSIDE)
-  set background=light
-  colorscheme solarized
-else
-  set background=dark
-  colorscheme molokai
-end
-
-" Leader
-let mapleader = ','
-
-" NerdTree
-map <C-e> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
-map <leader>e :NERDTreeFind<CR>
-nmap <leader>nt :NERDTreeFind<CR>
-let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
-let NERDTreeChDirMode=0
-let NERDTreeQuitOnOpen=0
-let NERDTreeMouseMode=2
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'murmur'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_map = '<c-p>'
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let mapleader=","
 let NERDTreeShowHidden=1
-let NERDTreeKeepTreeInNewTab=1
 
-" Vim UI
-if has('cmdline_info')
-  set ruler                   " Show the ruler
-  set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
-  set showcmd                 " Show partial commands in status line and selected characters/lines in visual mode
-endif
+autocmd FileType c,cpp,java,php,ruby,python autocmd! BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType gitcommit autocmd! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
 
-if has('statusline')
-  set laststatus=2
-  " Broken down into easily includeable segments
-  set statusline=%<%f\                     " Filename
-  set statusline+=%w%h%m%r                 " Options
-  set statusline+=%{fugitive#statusline()} " Git Hotness
-  set statusline+=\ [%{&ff}/%Y]            " Filetype
-  set statusline+=\ [%{getcwd()}]          " Current dir
-  set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-endif
+nnoremap <c-e> :NERDTreeToggle<CR>
+nnoremap <c-n> :nohl<CR>
+nnoremap <leader>e :NERDTreeFind<CR>
+nnoremap <leader>r :RuboCop<CR>
 
-highlight clear LineNr          " Current line number row will have same background color in relative mode
-highlight clear SignColumn      " SignColumn should match background
-
-map <C-J> <C-W>j<C-W>_
-map <C-K> <C-W>k<C-W>_
-map <C-L> <C-W>l<C-W>_
-map <C-H> <C-W>h<C-W>_
-
-noremap j gj
-noremap k gk
-nnoremap <F3> :NumbersToggle<CR>
-nnoremap <F4> :NumbersOnOff<CR>
-
-set backspace=indent,eol,start  " Backspace for dummies
-set cursorline
-set hlsearch
-set ignorecase
-set incsearch
-set linespace=0                 " No extra spaces between rows
-set showmatch
-set showmode
-set smartcase
-set wildmenu
-set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
-set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
-set scrolljump=5                " Lines to scroll when cursor leaves screen
-set scrolloff=3
-set foldenable
-set list
-set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
-set splitright
-set splitbelow
-
-" Code Folding
-nmap <leader>f0 :set foldlevel=0<CR>
-nmap <leader>f1 :set foldlevel=1<CR>
-nmap <leader>f2 :set foldlevel=2<CR>
-nmap <leader>f3 :set foldlevel=3<CR>
-nmap <leader>f4 :set foldlevel=4<CR>
-nmap <leader>f5 :set foldlevel=5<CR>
-nmap <leader>f6 :set foldlevel=6<CR>
-nmap <leader>f7 :set foldlevel=7<CR>
-nmap <leader>f8 :set foldlevel=8<CR>
-nmap <leader>f9 :set foldlevel=9<CR>
+fun! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
