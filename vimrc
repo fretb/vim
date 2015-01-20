@@ -7,6 +7,7 @@ end
 set autoindent
 set backspace=indent,eol,start
 set background=dark
+set clipboard=unnamed
 set expandtab
 set hlsearch
 set incsearch
