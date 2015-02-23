@@ -1,3 +1,4 @@
+set nocompatible
 call pathogen#infect()
 
 if $TERM == "xterm-256color"
@@ -5,18 +6,21 @@ if $TERM == "xterm-256color"
 end
 
 set autoindent
-set backspace=indent,eol,start
 set background=dark
+set backspace=indent,eol,start
+set clipboard=unnamed
 set expandtab
 set hlsearch
-set incsearch
 set ignorecase
+set incsearch
 set laststatus=2
 set modifiable
-set nocompatible
+set nolist
 set pastetoggle=<F3>
 set shiftwidth=2
 set smartindent
+set splitbelow
+set splitright
 set tabstop=2
 set virtualedit=onemore
 
@@ -40,7 +44,8 @@ autocmd FileType gitcommit autocmd! BufEnter COMMIT_EDITMSG call setpos('.', [0,
 autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
 
 nnoremap <c-e> :NERDTreeToggle<CR>
-nnoremap <c-n> :nohl<CR>
+nnoremap <c-h> :nohl<CR>
+nnoremap <c-n> :set invrelativenumber invnumber<CR>
 nnoremap <leader>e :NERDTreeFind<CR>
 nnoremap <leader>r :RuboCop<CR>
 
