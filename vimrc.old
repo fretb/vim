@@ -39,7 +39,7 @@ let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let mapleader=","
 let NERDTreeShowHidden=1
 
-autocmd FileType c,cpp,java,php,python autocmd! BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,java,php,ruby,python autocmd! BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 autocmd FileType gitcommit autocmd! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
 
