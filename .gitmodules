@@ -16,9 +16,6 @@
 [submodule "bundle/vim-chef"]
 	path = bundle/vim-chef
 	url = https://github.com/vadv/vim-chef.git
-[submodule "bundle/vim-rubocop"]
-	path = bundle/vim-rubocop
-	url = https://github.com/ngmy/vim-rubocop.git
 [submodule "bundle/vim-snipmate"]
 	path = bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate.git
@@ -28,6 +25,3 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule "bundle/nginx-vim-syntax"]
-	path = bundle/nginx-vim-syntax
-	url = https://github.com/evanmiller/nginx-vim-syntax.git
