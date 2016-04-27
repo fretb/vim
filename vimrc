@@ -6,7 +6,7 @@ if $TERM == "xterm-256color"
 end
 
 set autoindent
-set background=dark
+"set background=dark
 set backspace=indent,eol,start
 set clipboard=unnamed
 set expandtab
@@ -24,14 +24,14 @@ set splitright
 set tabstop=2
 set virtualedit=onemore
 
-color molokai
+color smyck
 filetype indent on
 filetype plugin indent on
 filetype plugin on
 syntax on
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'murmur'
+let g:airline_theme = 'wombat'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_map = '<c-p>'
 let g:NERDTreeWinPos = 'right'
@@ -40,7 +40,6 @@ let mapleader=","
 let NERDTreeShowHidden=1
 
 autocmd FileType gitcommit autocmd! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
-autocmd FileType ruby,eruby set filetype=ruby.eruby.chef
 
 nnoremap <c-e> :NERDTreeToggle<CR>
 nnoremap <c-h> :nohl<CR>
