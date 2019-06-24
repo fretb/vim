@@ -31,11 +31,8 @@ filetype plugin on
 syntax on
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'wombat'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_map = '<c-p>'
+let g:airline_theme = 'bubblegum'
 let g:NERDTreeWinPos = 'right'
-let g:syntastic_ruby_checkers = ['mri', 'rubocop', 'foodcritic']
 let mapleader=","
 let NERDTreeShowHidden=1
 
