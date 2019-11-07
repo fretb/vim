@@ -28,3 +28,6 @@
 [submodule "/Users/frederikthuysbaert/.vim/bundle/vim-airline-themes"]
 	path = /Users/frederikthuysbaert/.vim/bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
+[submodule "/Users/frederikthuysbaert/.vim/bundle/vim-indent-guides"]
+	path = /Users/frederikthuysbaert/.vim/bundle/vim-indent-guides
+	url = https://github.com/nathanaelkane/vim-indent-guides
