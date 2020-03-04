@@ -6,7 +6,6 @@ if $TERM == "xterm-256color"
 end
 
 set autoindent
-"set background=dark
 set backspace=indent,eol,start
 set clipboard=unnamed
 set expandtab
@@ -24,7 +23,9 @@ set splitright
 set tabstop=2
 set virtualedit=onemore
 
-color smyck
+"color smyck
+set background=dark
+color solarized
 filetype indent on
 filetype plugin indent on
 filetype plugin on
