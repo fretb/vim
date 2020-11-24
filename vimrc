@@ -8,7 +8,6 @@ end
 set autoindent
 set backspace=indent,eol,start
 set clipboard=unnamed
-set expandtab
 set hlsearch
 set ignorecase
 set incsearch
@@ -22,6 +21,7 @@ set splitbelow
 set splitright
 set tabstop=2
 set virtualedit=onemore
+set expandtab
 
 "color smyck
 set background=dark
