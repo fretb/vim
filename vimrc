@@ -8,11 +8,13 @@ end
 set autoindent
 set backspace=indent,eol,start
 set clipboard=unnamed
+set expandtab
 set hlsearch
 set ignorecase
 set incsearch
 set laststatus=2
 set modifiable
+set mouse=a
 set nolist
 set pastetoggle=<F3>
 set shiftwidth=2
@@ -21,11 +23,10 @@ set splitbelow
 set splitright
 set tabstop=2
 set virtualedit=onemore
-set expandtab
 
-"color smyck
-set background=dark
-color solarized
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+colorscheme monokai_pro
 filetype indent on
 filetype plugin indent on
 filetype plugin on

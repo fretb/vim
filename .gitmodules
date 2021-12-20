@@ -1,3 +1,15 @@
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/w0rp/ale.git
+[submodule "bundle/cobalt2"]
+	path = bundle/cobalt2
+	url = https://github.com/GertjanReynaert/cobalt2-vim-theme.git
+[submodule "bundle/dracula"]
+	path = bundle/dracula
+	url = https://github.com/dracula/vim.git
+[submodule "bundle/editorconfig-vim"]
+	path = bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
@@ -10,30 +22,24 @@
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
-[submodule "bundle/vim-trailing-whitespace"]
-	path = bundle/vim-trailing-whitespace
-	url = https://github.com/bronson/vim-trailing-whitespace.git
-[submodule "bundle/editorconfig-vim"]
-	path = bundle/editorconfig-vim
-	url = https://github.com/editorconfig/editorconfig-vim.git
-[submodule "bundle/vim-sensible"]
-	path = bundle/vim-sensible
-	url = https://github.com/tpope/vim-sensible.git
-[submodule "bundle/ale"]
-	path = bundle/ale
-	url = https://github.com/w0rp/ale.git
-[submodule "bundle/dracula-theme"]
-	path = bundle/dracula-theme
-	url = git@github.com:dracula/vim.git
-[submodule "/Users/frederikthuysbaert/.vim/bundle/vim-airline-themes"]
-	path = /Users/frederikthuysbaert/.vim/bundle/vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
-[submodule "/Users/frederikthuysbaert/.vim/bundle/vim-indent-guides"]
-	path = /Users/frederikthuysbaert/.vim/bundle/vim-indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vim-airline-themes"]
   path = bundle/vim-airline-themes
   url= https://github.com/vim-airline/vim-airline-themes.git
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/vim-monokai-pro"]
+	path = bundle/vim-monokai-pro
+	url = https://github.com/phanviet/vim-monokai-pro.git
+[submodule "bundle/vim-sensible"]
+	path = bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git
+[submodule "bundle/vim-snazzy"]
+	path = bundle/vim-snazzy
+	url = https://github.com/connorholyday/vim-snazzy.git
+[submodule "bundle/vim-trailing-whitespace"]
+	path = bundle/vim-trailing-whitespace
+	url = https://github.com/bronson/vim-trailing-whitespace.git
+[submodule "bundle/vim-polyglot"]
+	path = bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
